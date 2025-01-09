@@ -5,15 +5,15 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LibraryManagementSystem.Business.Abstractions
+namespace LibraryManagementSystem.DataAccess.Abstractions
 {
-    public interface IService<T> where T : class
+    public interface IRepository<T> where T : class
     {
-        IEnumerable<T> GetAll();
         void Add(T entity);
         void Update(T entity);
         void Delete(Guid id);
-        T GetById(Guid id);
+        IEnumerable<T> GetAll();
+        T GetByID(Guid id);
         bool IfEntityExists(Expression<Func<T, bool>> filter);
     }
 }

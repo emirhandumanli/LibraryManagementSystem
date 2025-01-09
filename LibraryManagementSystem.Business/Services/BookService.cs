@@ -3,6 +3,7 @@ using LibraryManagementSystem.Entities.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -26,6 +27,11 @@ namespace LibraryManagementSystem.Business.Services
         }
 
         public Book GetById(Guid id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool IfEntityExists(Expression<Func<Book, bool>> filter)
         {
             throw new NotImplementedException();
         }
