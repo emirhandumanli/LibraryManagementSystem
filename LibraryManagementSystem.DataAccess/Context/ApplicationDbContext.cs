@@ -11,16 +11,13 @@ namespace LibraryManagementSystem.DataAccess.Context
     public class ApplicationDbContext : DbContext
     {
         public DbSet<Book> Books { get; set; }
+        public DbSet<User> Users { get; set; }
 
-        public override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer
                 ("");
 
-        }
-        public override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            
         }
     }
 }

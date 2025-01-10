@@ -12,6 +12,6 @@ namespace LibraryManagementSystem.Business.Abstractions
     {
         void RegisterUser(User user);
         User Login(string email,string password);
-        bool IfEntityExists(Expression<Func<T, bool>> filter);
+        
     }
 }
