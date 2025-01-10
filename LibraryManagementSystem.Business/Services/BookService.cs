@@ -1,4 +1,5 @@
 ﻿using LibraryManagementSystem.Business.Abstractions;
+using LibraryManagementSystem.DataAccess.Repositories;
 using LibraryManagementSystem.Entities.Models;
 using System;
 using System.Collections.Generic;
@@ -9,11 +10,12 @@ using System.Threading.Tasks;
 
 namespace LibraryManagementSystem.Business.Services
 {
-    public class BookService : IService<Book>
+    public class BookService : IBookService<Book>
     {
+        private readonly BookRepository _bookRepository;
         public void Add(Book entity)
         {
-            throw new NotImplementedException();
+            _bookRepository.Add(entity);
         }
 
         public void Delete(Guid id)
@@ -28,17 +30,23 @@ namespace LibraryManagementSystem.Business.Services
 
         public Book GetById(Guid id)
         {
-            throw new NotImplementedException();
+            return _bookRepository.GetByID(id);
+            
+        }
+
+        public bool IfEntityExists(string title)
+        {
+            return _bookRepository.IfEntityExists(b => b.Title == title);
         }
 
         public bool IfEntityExists(Expression<Func<Book, bool>> filter)
         {
-            throw new NotImplementedException();
+            return _bookRepository.IfEntityExists(filter);
         }
 
         public void Update(Book entity)
         {
-            throw new NotImplementedException();
+            _bookRepository.Update(entity);
         }
     }
 }
