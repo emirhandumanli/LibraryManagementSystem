@@ -10,12 +10,16 @@ using System.Threading.Tasks;
 
 namespace LibraryManagementSystem.Business.Services
 {
-    public class BookService : IBookService<Book>
+    public class BookService : IService<Book>
     {
         private readonly BookRepository _bookRepository;
         public void Add(Book entity)
         {
             _bookRepository.Add(entity);
+        }
+        public void Update(Book entity)
+        {
+            _bookRepository.Update(entity);
         }
 
         public void Delete(Guid id)
@@ -25,7 +29,7 @@ namespace LibraryManagementSystem.Business.Services
 
         public IEnumerable<Book> GetAll()
         {
-            throw new NotImplementedException();
+            return _bookRepository.GetAll();
         }
 
         public Book GetById(Guid id)
@@ -44,9 +48,16 @@ namespace LibraryManagementSystem.Business.Services
             return _bookRepository.IfEntityExists(filter);
         }
 
-        public void Update(Book entity)
+        public User Login(string email, string password)
         {
-            _bookRepository.Update(entity);
+            throw new NotImplementedException();
         }
+
+        public void RegisterUser(User user)
+        {
+            throw new NotImplementedException();
+        }
+
+       
     }
 }

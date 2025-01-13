@@ -10,12 +10,36 @@ using System.Threading.Tasks;
 
 namespace LibraryManagementSystem.Business.Services
 {
-    public class UserService : IUserService<User>
+    public class UserService : IService<User>
     {
         private readonly UserRepository _userRepository;
         public UserService(UserRepository userRepository)
         {
             _userRepository = userRepository;
+        }
+
+        public void Add(User entity)
+        {
+            _userRepository.Add(entity);
+        }
+
+        public void Delete(Guid id)
+        {
+            _userRepository.Delete(id);
+        }
+
+        public IEnumerable<User> GetAll()
+        {
+            return _userRepository.GetAll();
+        }
+
+        public User GetById(Guid id)
+        {
+            return _userRepository.GetByID(id);
+        }
+        public void Update(User entity)
+        {
+            _userRepository.Update(entity);
         }
 
         public bool IfEntityExists(Expression<Func<User, bool>> filter)
@@ -39,11 +63,13 @@ namespace LibraryManagementSystem.Business.Services
             {
                 throw new Exception(nameof(user));
             }
-            if (_userRepository.IfEntityExists(u => u.Name == user.Name))
+            if (_userRepository.IfEntityExists(u => u.Email == user.Email))
             {
                 throw new Exception("Kullanıcı zaten mevcut.");
             }
             _userRepository.Add(user);
         }
+
+        
     }
 }
