@@ -7,7 +7,7 @@ namespace LibraryManagementSystem.UI.Forms
     public partial class LogInForm : Form
     {
         private readonly UserService _userService;
-        public LogInForm(UserService userService)
+        public LogInForm()
         {
             InitializeComponent();
             var dbContext = new ApplicationDbContext();
@@ -18,14 +18,9 @@ namespace LibraryManagementSystem.UI.Forms
 
         private void lblRegister_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            SignInForm signInForm = new SignInForm(_userService);
+            SignInForm signInForm = new SignInForm();
             signInForm.Show();
             this.Hide();
-        }
-
-        private void LogInForm_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void btnLogIn_Click(object sender, EventArgs e)

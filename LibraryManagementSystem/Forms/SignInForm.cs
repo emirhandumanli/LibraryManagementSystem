@@ -8,18 +8,13 @@ namespace LibraryManagementSystem.UI.Forms
     public partial class SignInForm : Form
     {
         private readonly UserService _userService;
-        public SignInForm(UserService userService)
+        public SignInForm()
         {
             InitializeComponent();
             var dbContext = new ApplicationDbContext();
             var userRepository = new UserRepository(dbContext);
 
             _userService = new UserService(userRepository);
-        }
-
-        private void SignInForm_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -48,7 +43,7 @@ namespace LibraryManagementSystem.UI.Forms
                 _userService.RegisterUser(newUser);
                 MessageBox.Show("Registration Successfull! You can now log in.","Success",MessageBoxButtons.OK,MessageBoxIcon.Information);
 
-                LogInForm loginForm = new LogInForm(_userService);
+                LogInForm loginForm = new LogInForm();
                 loginForm.Show();
                 this.Close();
             }

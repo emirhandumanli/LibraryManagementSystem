@@ -28,12 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "UserForm";
+            grpBoxBooks = new GroupBox();
+            SuspendLayout();
+            // 
+            // grpBoxBooks
+            // 
+            grpBoxBooks.Location = new Point(12, 12);
+            grpBoxBooks.Name = "grpBoxBooks";
+            grpBoxBooks.Size = new Size(641, 526);
+            grpBoxBooks.TabIndex = 0;
+            grpBoxBooks.TabStop = false;
+            grpBoxBooks.Text = "Kitaplar";
+            // 
+            // UserForm
+            // 
+            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.GrayText;
+            ClientSize = new Size(1013, 550);
+            Controls.Add(grpBoxBooks);
+            Font = new Font("Segoe UI", 11F);
+            Margin = new Padding(4);
+            Name = "UserForm";
+            Text = "UserForm";
+            Load += UserForm_Load;
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private GroupBox grpBoxBooks;
     }
 }

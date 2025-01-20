@@ -136,7 +136,6 @@
             Margin = new Padding(4);
             Name = "SignInForm";
             Text = "SignInForm";
-            Load += SignInForm_Load;
             ResumeLayout(false);
             PerformLayout();
         }

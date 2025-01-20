@@ -13,6 +13,10 @@ namespace LibraryManagementSystem.Business.Services
     public class BookService : IService<Book>
     {
         private readonly BookRepository _bookRepository;
+        public BookService(BookRepository bookRepository)
+        {
+            _bookRepository = bookRepository;
+        }
         public void Add(Book entity)
         {
             _bookRepository.Add(entity);
