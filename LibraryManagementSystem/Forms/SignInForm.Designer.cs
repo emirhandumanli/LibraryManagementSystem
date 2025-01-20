@@ -32,10 +32,10 @@
             lblSoyad = new Label();
             lblEmail = new Label();
             lblPassword = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
+            txtName = new TextBox();
+            txtLastName = new TextBox();
+            txtEmail = new TextBox();
+            txtPassword = new TextBox();
             btnSave = new Button();
             SuspendLayout();
             // 
@@ -75,37 +75,37 @@
             lblPassword.TabIndex = 0;
             lblPassword.Text = "Şifre";
             // 
-            // textBox1
+            // txtName
             // 
-            textBox1.Location = new Point(314, 77);
-            textBox1.Margin = new Padding(4, 4, 4, 4);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(155, 32);
-            textBox1.TabIndex = 1;
+            txtName.Location = new Point(314, 77);
+            txtName.Margin = new Padding(4);
+            txtName.Name = "txtName";
+            txtName.Size = new Size(155, 32);
+            txtName.TabIndex = 1;
             // 
-            // textBox2
+            // txtLastName
             // 
-            textBox2.Location = new Point(314, 146);
-            textBox2.Margin = new Padding(4, 4, 4, 4);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(155, 32);
-            textBox2.TabIndex = 1;
+            txtLastName.Location = new Point(314, 146);
+            txtLastName.Margin = new Padding(4);
+            txtLastName.Name = "txtLastName";
+            txtLastName.Size = new Size(155, 32);
+            txtLastName.TabIndex = 1;
             // 
-            // textBox3
+            // txtEmail
             // 
-            textBox3.Location = new Point(314, 209);
-            textBox3.Margin = new Padding(4, 4, 4, 4);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(155, 32);
-            textBox3.TabIndex = 1;
+            txtEmail.Location = new Point(314, 209);
+            txtEmail.Margin = new Padding(4);
+            txtEmail.Name = "txtEmail";
+            txtEmail.Size = new Size(155, 32);
+            txtEmail.TabIndex = 1;
             // 
-            // textBox4
+            // txtPassword
             // 
-            textBox4.Location = new Point(314, 274);
-            textBox4.Margin = new Padding(4, 4, 4, 4);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(155, 32);
-            textBox4.TabIndex = 1;
+            txtPassword.Location = new Point(314, 274);
+            txtPassword.Margin = new Padding(4);
+            txtPassword.Name = "txtPassword";
+            txtPassword.Size = new Size(155, 32);
+            txtPassword.TabIndex = 1;
             // 
             // btnSave
             // 
@@ -115,6 +115,7 @@
             btnSave.TabIndex = 2;
             btnSave.Text = "Kayıt Ol";
             btnSave.UseVisualStyleBackColor = true;
+            btnSave.Click += btnSave_Click;
             // 
             // SignInForm
             // 
@@ -123,18 +124,19 @@
             BackColor = SystemColors.GrayText;
             ClientSize = new Size(703, 495);
             Controls.Add(btnSave);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(txtPassword);
+            Controls.Add(txtEmail);
+            Controls.Add(txtLastName);
+            Controls.Add(txtName);
             Controls.Add(lblPassword);
             Controls.Add(lblEmail);
             Controls.Add(lblSoyad);
             Controls.Add(lblName);
             Font = new Font("Segoe UI", 11F);
-            Margin = new Padding(4, 4, 4, 4);
+            Margin = new Padding(4);
             Name = "SignInForm";
             Text = "SignInForm";
+            Load += SignInForm_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -145,10 +147,10 @@
         private Label lblSoyad;
         private Label lblEmail;
         private Label lblPassword;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
+        private TextBox txtName;
+        private TextBox txtLastName;
+        private TextBox txtEmail;
+        private TextBox txtPassword;
         private Button btnSave;
     }
 }

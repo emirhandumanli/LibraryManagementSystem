@@ -40,7 +40,7 @@
             // 
             txtEmail.Font = new Font("Segoe UI", 11F);
             txtEmail.Location = new Point(322, 140);
-            txtEmail.Margin = new Padding(4, 4, 4, 4);
+            txtEmail.Margin = new Padding(4);
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(263, 32);
             txtEmail.TabIndex = 0;
@@ -69,7 +69,7 @@
             // 
             txtPassword.Font = new Font("Segoe UI", 11F);
             txtPassword.Location = new Point(322, 240);
-            txtPassword.Margin = new Padding(4, 4, 4, 4);
+            txtPassword.Margin = new Padding(4);
             txtPassword.Name = "txtPassword";
             txtPassword.Size = new Size(263, 32);
             txtPassword.TabIndex = 3;
@@ -91,12 +91,13 @@
             // btnLogIn
             // 
             btnLogIn.Location = new Point(322, 314);
-            btnLogIn.Margin = new Padding(4, 4, 4, 4);
+            btnLogIn.Margin = new Padding(4);
             btnLogIn.Name = "btnLogIn";
             btnLogIn.Size = new Size(264, 58);
             btnLogIn.TabIndex = 5;
             btnLogIn.Text = "Giriş Yap";
             btnLogIn.UseVisualStyleBackColor = true;
+            btnLogIn.Click += btnLogIn_Click;
             // 
             // LogInForm
             // 
@@ -111,9 +112,10 @@
             Controls.Add(lblEmail);
             Controls.Add(txtEmail);
             Font = new Font("Segoe UI", 11F);
-            Margin = new Padding(4, 4, 4, 4);
+            Margin = new Padding(4);
             Name = "LogInForm";
             Text = "Log in";
+            Load += LogInForm_Load;
             ResumeLayout(false);
             PerformLayout();
         }

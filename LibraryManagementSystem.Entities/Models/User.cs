@@ -13,6 +13,7 @@ namespace LibraryManagementSystem.Entities.Models
         public string SurName { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
+        public string Role { get; set; }
 
     }
 }
